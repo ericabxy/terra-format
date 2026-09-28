@@ -1,11 +1,5 @@
 print('This file will be run at load time!')
 
-core.register_node('basenodes:dirt', {
-	description = 'Dirt',
-	tiles = {'dirt.png'},
-	groups = {crumbly = 3, soil = 1}
-})
-
 core.register_node("basenodes:dirt_with_grass", {
 	description = "Dirt with Grass",
 	-- Using overlays here has no real merit here but we do it anyway so
@@ -14,14 +8,8 @@ core.register_node("basenodes:dirt_with_grass", {
 	groups = {crumbly = 3, soil = 1},
 })
 
-core.register_node('basenodes:sand', {
-	description = 'Sand',
-	tiles = {'sand.png'},
-	groups = {crumbly = 3}
-})
-
 core.register_node('basenodes:stone', {
-	description = 'Stone',
+	description = 'Bitstone',
 	tiles = {'default_stone.png'},
 	groups = {cracky = 3}
 })
@@ -109,3 +97,7 @@ core.register_alias("mapgen_river_water_source", "basenodes:water")
 core.register_alias("mapgen_dirt", "basenodes:dirt")
 core.register_alias("mapgen_dirt_with_grass", "basenodes:dirt_with_grass")
 core.register_alias("mapgen_sand", "basenodes:sand")
+
+-- Load additional nodes and materials.
+dofile(minetest.get_modpath("basenodes").."/carbon.lua")
+dofile(minetest.get_modpath("basenodes").."/ferrum.lua")
