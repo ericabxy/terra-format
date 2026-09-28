@@ -1,0 +1,3 @@
+[submodule "mods/sprint"]
+	path = mods/sprint
+	url = https://github.com/octacian/sprint
