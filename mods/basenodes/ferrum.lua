@@ -14,7 +14,7 @@ core.register_craftitem("basenodes:iron_lump", {
 	description = "Ferrum Lump",
 	inventory_image = "default_iron_lump.png",
 })
-
+--[[
 core.register_ore({
 	ore_type       = "scatter",
 	ore            = "basenodes:stone_with_iron",
@@ -59,4 +59,4 @@ core.register_ore({
 	height_min     = -31000,
 	height_max     = -64,
 	flags          = "absheight",
-})
+})--]]

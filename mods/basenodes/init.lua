@@ -1,11 +1,19 @@
 print('This file will be run at load time!')
 
-core.register_node("basenodes:dirt_with_grass", {
-	description = "Dirt with Grass",
-	-- Using overlays here has no real merit here but we do it anyway so
-	-- overlay-related bugs become more apparent in devtest.
-	tiles = {"dirt_grass.png"},
-	groups = {crumbly = 3, soil = 1},
+core.register_node("basenodes:dirt", {
+	description = "Dirt",
+	tiles = {"default_dirt.png"},
+	is_ground_content = true,
+	groups = {crumbly=3,soil=1},
+	--sounds = default.node_sound_dirt_defaults(),
+})
+
+core.register_node("basenodes:sand", {
+	description = "Sand",
+	tiles = {"default_sand.png"},
+	is_ground_content = true,
+	groups = {crumbly=3, falling_node=1, sand=1},
+	--sounds = default.node_sound_sand_defaults(),
 })
 
 core.register_node('basenodes:stone', {
@@ -98,6 +106,33 @@ core.register_alias("mapgen_dirt", "basenodes:dirt")
 core.register_alias("mapgen_dirt_with_grass", "basenodes:dirt_with_grass")
 core.register_alias("mapgen_sand", "basenodes:sand")
 
+-- Basic biome(s)
+core.register_biome({
+    name = "stoneland",
+    node_top = "basenodes:stone",
+    depth_top = 1,
+    node_filler = "basenodes:stone",
+    depth_filler = 3,
+    y_max = 1000,
+    y_min = -3,
+    heat_point = 50,
+    humidity_point = 50,
+})
+
+core.register_biome({
+    name = "dirtland",
+    node_top = "basenodes:dirt",
+    depth_top = 1,
+    node_filler = "basenodes:dirt",
+    depth_filler = 3,
+    y_max = 1000,
+    y_min = -3,
+    heat_point = 50,
+    humidity_point = 50,
+})
+
+
 -- Load additional nodes and materials.
 dofile(minetest.get_modpath("basenodes").."/carbon.lua")
+dofile(minetest.get_modpath("basenodes").."/cobble.lua")
 dofile(minetest.get_modpath("basenodes").."/ferrum.lua")
