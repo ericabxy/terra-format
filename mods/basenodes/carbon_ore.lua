@@ -7,7 +7,7 @@ core.register_node("basenodes:stone_with_coal", {
 	is_ground_content = true,
 	groups = {cracky=3},
 	drop = 'basenodes:coal_lump',
-	--sounds = default.node_sound_stone_defaults(),
+	sounds = basenodes.node_sound_stone_defaults(),
 })
 
 core.register_craftitem("basenodes:coal_lump", {
@@ -15,7 +15,6 @@ core.register_craftitem("basenodes:coal_lump", {
 	inventory_image = "default_coal_lump.png",
 })
 
---[[
 core.register_ore({
 	ore_type       = "scatter",
 	ore            = "basenodes:stone_with_coal",
@@ -37,4 +36,4 @@ core.register_ore({
 	height_min     = -31000,
 	height_max     = 0,
 	flags          = "absheight",
-})--]]
+})

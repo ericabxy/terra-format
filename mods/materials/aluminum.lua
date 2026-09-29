@@ -24,5 +24,5 @@ core.register_decoration({
 	y_min = 1,
 	decoration = "materials:aluminum",
 	height = 3,
-        height_max = 5,
+        height_max = 4,
 })

@@ -1,5 +1,3 @@
-core.register_alias("mapgen_sand", "materials:silicon")
-
 core.register_node("materials:silicon", {
 	description = ("Silicon"),
 	tiles = {"materials_silicon.png"},
@@ -26,4 +24,3 @@ core.register_ore({
 		persist = 0.0
 	},
 })
-
